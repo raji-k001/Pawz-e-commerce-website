@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAWZ</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    
+    <nav class="w-full border-b border-gray-200 bg-white px-6 py-3 flex justify-between items-center sticky top-0 z-50"> 
+  <!-- Left: Logo -->
+  <div class="flex items-center gap-2">
+    <img src="image/pawz.svg" alt="PAWZ Logo">
+   
+  </div>
+ <!-- Desktop Menu -->
+<ul class="hidden md:flex gap-8 text-sm font-semibold tracking-widest text-gray-800">
+  <li class="hover:underline cursor-pointer"><a href="index.html">BEST SELLERS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">NEW ARRIVALS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">DOGS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">CATS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">DROPS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">APPAREL</a></li>
+</ul>
+<div class="flex gap-3 items-center ">
+    <!-- Search Icon -->
+<i id="search-icon" class="fa-solid fa-magnifying-glass text-xl cursor-pointer"></i>
+
+    <!-- Search Input (Hidden initially) -->
+<input 
+  id="search-input" 
+  type="text" 
+  placeholder="Search products..." 
+  class="hidden border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none ">
+
+
+    <!-- Cart Icon -->
+    <i class="fa-solid fa-cart-shopping text-xl cursor-pointer"></i>
+
+    <!-- Mobile Menu Icon -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <i class="fa-solid fa-bars text-2xl"></i>
+    </button>
+  </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (Hidden by Default) -->
+<div id="mobile-menu" class="absolute hidden bg-white w-full border-gray-200 z-10 ">
+  <ul class="flex flex-col gap-4 p-4  text-gray-800 font-semibold tracking-widest">
+    <li class="hover:underline cursor-pointer">BEST SELLERS</li>
+    <li class="hover:underline cursor-pointer">NEW ARRIVALS</li>
+    <li class="hover:underline cursor-pointer">DOGS</li>
+    <li class="hover:underline cursor-pointer">CATS</li>
+    <li class="hover:underline cursor-pointer">DROPS</li>
+    <li class="hover:underline cursor-pointer">APPAREL</li>
+  </ul>
+</div>
+
+    <!-- Cover Image -->
+    <div class="relative w-full p-2">
+        <img src="image/header_img1.webp" class="w-full h-[60vh] md:h-[80vh] object-cover" alt="Cover Image" />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+            <p class="text-base font-semibold mb-1 tracking-widest">PAWZ FOR A CAUSE</p>
+            <h1 class="text-xl sm:text-3xl md:text-5xl font-bold px-6 mb-4">
+                Help Rescue Animals, And Look Good While Doing it!
+            </h1>
+            <button class="bg-white text-black px-8 py-3 rounded font-bold mt-2 hover:bg-transparent hover:text-white hover:border hover:border-white transition duration-300">
+                Shop Now
+            </button>
+        </div>
+    </div>
+    <!-- Closet Category -->
+    <section class="p-2 gap-3 text-white grid grid-cols-1 mt-5 md:grid-cols-4">
+        <div class="relative flex overflow-hidden">
+            <img class="inline hover:shadow-xl transform hover:scale-110 duration-300" src="image/beach_closet.webp" alt="Beach Day">
+            <div class="absolute bottom-2 left-3 font-bold">
+                <h2>BEACH</h2>
+                <button class="underline">Shop Now</button>
+            </div>
+        </div>
+        <div class="relative flex overflow-hidden">
+            <img class="inline hover:shadow-xl transform hover:scale-110 duration-300" src="image/texas.webp" alt="Texas Strong">
+            <div class="absolute bottom-2 left-3 font-bold">
+                <h2>TEXAS STRONG</h2>
+                <button class="underline">Shop Now</button>
+            </div>
+        </div>
+        <div class="relative flex overflow-hidden">
+            <img class="inline hover:shadow-xl transform hover:scale-110 duration-300" src="image/memorial.webp" alt="Memorial Day">
+            <div class="absolute bottom-2 left-3 font-bold">
+                <h2>MEMORIAL DAY</h2>
+                <button class="underline">Shop Now</button>
+            </div>
+        </div>
+        <div class="relative flex overflow-hidden">
+            <img class="hover:shadow-xl transform hover:scale-110 duration-300" src="image/cats_shirt.webp" alt="Cats">
+            <div class="absolute bottom-2 left-3 font-bold">
+                <h2>CATS</h2>
+                <button class="underline">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <!-- Category Header -->
+    <header>
+        <div class=" border-gray-200">
+            <div class="flex gap-5 text-xl  justify-center md:text-4xl">
+                <button class="category-btn active hover:underline" data-category="best-seller">BEST SELLER</button>
+                <button class="category-btn hover:underline" data-category="new-arrival">NEW ARRIVAL</button>
+                <button class="category-btn hover:underline" data-category="cats">CATS</button>
+                <button class="category-btn hover:underline" data-category="hoodies">HOODIES</button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="p-4 flex justify-center text-2xl gap-5 lg:gap-8 overflow-x-auto whitespace-nowrap px-4 md:p-8">
+        <div class="product-category-content active flex gap-4 overflow-x-auto " data-category="best-seller">
+            <div>
+                <img src="image/best seller1.webp" alt="Best Seller">
+                <p>Good day (Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            <div>
+                <img src="image/best seller2.webp" alt="Best Seller">
+                <p>Good day (Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            <div>
+                <img src="image/best seller3.webp" alt="Best Seller">
+                <p>Good day (Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            <div>
+                <img src="image/best seller4.webp" alt="Best Seller">
+                <p>Good day (Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            <div>
+                <img src="image/best seller5.webp" alt="Best Seller">
+                <p>Good day (Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+        </div>
+        <div class="product-category-content flex gap-4 overflow-x-auto hidden" data-category="new-arrival">
+            <div>
+                <img src="image/new arrival1.webp" alt="New Arrival">
+                <p>Fresh Style (Adult hoodie)</p>
+                <p>From $49.99</p>
+            </div>
+            <div>
+                <img src="image/new arrival2.webp" alt="New Arrival">
+                <p>Fresh Style (Adult hoodie)</p>
+                <p>From $49.99</p>
+            </div>
+            <div>
+                <img src="image/new arrival3.webp" alt="New Arrival">
+                <p>Fresh Style (Adult hoodie)</p>
+                <p>From $49.99</p>
+            </div>
+            <div>
+                <img src="image/new arrival4.webp" alt="New Arrival">
+                <p>Fresh Style (Adult hoodie)</p>
+                <p>From $49.99</p>
+            </div>
+            <div>
+                <img src="image/new arrival5.webp" alt="New Arrival">
+                <p>Fresh Style (Adult hoodie)</p>
+                <p>From $49.99</p>
+            </div>
+        </div>
+        <div class="product-category-content flex gap-4 overflow-x-auto hidden text-center gap-6" data-category="cats">
+            <div >
+                <img src="image/cats1.webp" alt="Cat">
+                <p>Cat Lover (Adult hoodie)</p>
+                <p>From $39.99</p>
+            </div>
+            <div>
+                <img src="image/cats2.webp" alt="Cat">
+                <p>Cat Lover (Adult hoodie)</p>
+                <p>From $39.99</p>
+            </div>
+            <div>
+                <img src="image/cats3.webp" alt="Cat">
+                <p>Cat Lover (Adult hoodie)</p>
+                <p>From $39.99</p>
+            </div>
+            <div>
+                <img src="image/cats4.webp" alt="Cat">
+                <p>Cat Lover (Adult hoodie)</p>
+                <p>From $39.99</p>
+            </div>
+            <div>
+                <img src="image/cats5.webp " alt="Cat">
+                <p>Cat Lover (Adult hoodie)</p>
+                <p>From $39.99</p>
+            </div>
+        </div>
+        <div class="product-category-content flex gap-4 overflow-x-auto hidden  text-center" data-category="hoodies">
+            <div> 
+                <img src="image/hoody1.webp" alt="Hoody">
+                <p>Classic Hoody(Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            <div>
+                <img src="image/hoody3.webp" alt="Hoody">
+                <p>Classic Hoody(Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            <div>
+                <img src="image/hoody2.webp" alt="Hoody">
+                <p>Classic Hoody (Adult hoodie)</p>
+                <p>From $59.99</p>
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- Footer Image Section -->
+    <div class="relative w-full p-2">
+        <img src="image/fooder_img.webp" class="w-full h-[60vh] md:h-[80vh] object-cover" alt="Footer Image" />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+            <p class="text-base font-semibold mb-1 tracking-widest">Handmade to order, Worn with purpose</p>
+            <h1 class="text-xl sm:text-3xl md:text-5xl font-bold px-6 mb-4">
+                Premium Hoodies That Help Save Dogs
+            </h1>
+            <button class="bg-white text-black px-8 py-3 rounded font-bold mt-2 hover:bg-transparent hover:text-white hover:border hover:border-white transition duration-300">
+                Shop Comfy Hoodies
+            </button>
+        </div>
+    </div>
+    <!-- You will need to have Tailwind CSS included in your project for these classes to work -->
+<section class="bg-gray-50 font-sans py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-semibold uppercase tracking-wider text-gray-800">
+        WHAT OUR PACK IS SAYING
+      </h2>
+      <p class="mt-2 max-w-2xl mx-auto text-base text-gray-600">
+        Real reviews from dog lovers—see why thousands trust PAWZ to look good and do good.
+      </p>
+    </div>
+
+    
+    <div class="relative">
+    
+      <div id="reviews-carousel" class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+
+        <!-- Review Card 1: Hoodie -->
+        <article class="flex-none w-[300px] snap-start bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+          <!-- Image -->
+          <div class="h-[250px] relative">
+            <img class="w-full h-[250px] object-cover" src="image/review1.jpg" alt="Salty Pawz Hoodie">
+          </div>
+          <!-- Content -->
+          <div class="p-4 text-center flex-grow flex flex-col">
+            <div class="flex justify-center gap-1 mb-3 text-green-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
+              Susan M.
+              <svg class="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+            </h3>
+            <p class="text-gray-700 leading-relaxed">Love it awesome Hoodie</p>
+          </div>
+        </article>
+
+        <!-- Review Card 2 -->
+        <article class="flex-none w-[300px] snap-start bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+          <!-- Image with Overlay -->
+          <div class="h-[250px] relative">
+            <img class="w-full h-[250px] object-cover" src="image/review2.jpg" alt="Trucker Hat">
+            <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+              <div class="w-14 h-14 bg-black/50 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="p-4 text-center flex-grow flex flex-col">
+            <div class="flex justify-center gap-1 mb-3 text-green-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
+              Christin...
+              <svg class="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+            </h3>
+            <p class="text-gray-700 leading-relaxed">Love this hat! It's so flattering, perfect trucker hat!</p>
+          </div>
+        </article>
+
+        <!-- Review Card 3 -->
+        <article class="flex-none w-[300px] snap-start bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+          <!-- Image -->
+          <div class="h-[250px] relative">
+            <img class="w-full h-[250px] object-cover" src="image/review4.jpg" alt="Anti Social Cat Moms Club Shirt">
+          </div>
+          <!-- Content -->
+          <div class="p-4 text-center flex-grow flex flex-col">
+            <div class="flex justify-center gap-1 mb-3 text-green-500">
+            <!-- 5 Star SVGs -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
+              Caitlin P.
+              <svg class="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+            </h3>
+            <p class="text-gray-700 leading-relaxed">Love this shirt! Soft and comfortable. I recommend 110%</p>
+          </div>
+        </article>
+
+          
+        <!-- Review Card 4 -->
+        <article class="flex-none w-[300px] snap-start bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+          <!-- Image -->
+          <div class="h-[250px] relative">
+            <img class="w-full h-[250px] object-cover" src="image/review4.jpg" alt="Anti Social Cat Moms Club Shirt">
+          </div>
+          <!-- Content -->
+          <div class="p-4 text-center flex-grow flex flex-col">
+            <div class="flex justify-center gap-1 mb-3 text-green-500">
+            <!-- 5 Star SVGs -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
+              Caitlin P.
+              <svg class="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+            </h3> 
+            <p class="text-gray-700 leading-relaxed">Love this shirt! Soft and comfortable. I recommend 110%</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+  <footer class="bg-green-900 text-white py-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Logo and Description -->
+    <div>
+      <div class="flex items-center space-x-2 mb-4">
+        <!-- Paw Logo -->
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8 2 5 6 5 10c0 5 7 12 7 12s7-7 7-12c0-4-3-8-7-8z"></path>
+        </svg>
+        <span class="text-xl font-bold">PAWZ</span>
+      </div>
+      <p class="text-gray-300 text-sm leading-relaxed">
+        Every purchase helps save dogs in need, supporting no-kill shelters across the country.
+        Wear your love for dogs with purpose-driven apparel that makes a difference.
+      </p>
+      <div class="flex space-x-5 mt-5">
+        <a href="#"><i class="fab fa-facebook text-xl"></i></a>
+        <a href="#"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="#"><i class="fab fa-tiktok text-xl"></i></a>
+      </div>
+    </div>
+
+    <!-- Shop -->
+    <div>
+      <h3 class="text-sm font-bold uppercase mb-4 tracking-wider">Shop</h3>
+      <ul class="space-y-2 text-gray-200 text-sm">
+        <li><a href="#" class="hover:underline">Shop All</a></li>
+        <li><a href="#" class="hover:underline">Best Sellers</a></li>
+        <li><a href="#" class="hover:underline">Dogs</a></li>
+        <li><a href="#" class="hover:underline">Cats</a></li>
+        <li><a href="#" class="hover:underline">New Arrivals</a></li>
+        <li><a href="#" class="hover:underline">Tees</a></li>
+        <li><a href="#" class="hover:underline">Hoodies</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h3 class="text-sm font-bold uppercase mb-4 tracking-wider">Support</h3>
+      <ul class="space-y-2 text-gray-200 text-sm">
+        <li><a href="#" class="hover:underline">Our Story</a></li>
+        <li><a href="#" class="hover:underline">Giving Back</a></li>
+        <li><a href="#" class="hover:underline">FAQs</a></li>
+        <li><a href="#" class="hover:underline">Track Your Order</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- More -->
+    <div>
+      <h3 class="text-sm font-bold uppercase mb-4 tracking-wider">More</h3>
+      <ul class="space-y-2 text-gray-200 text-sm">
+        <li><a href="#" class="hover:underline">Wholesale</a></li>
+        <li><a href="#" class="hover:underline">Shipping</a></li>
+        <li><a href="#" class="hover:underline">Refund Policy</a></li>
+        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="#" class="hover:underline">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-10 flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-5 space-y-4 md:space-y-0">
+    <!-- Country & Currency -->
+    <div class="flex items-center space-x-2 text-sm text-gray-300">
+      <img src="https://flagcdn.com/w20/in.png" alt="India Flag" class="w-5 h-4">
+      <span>India (USD $)</span>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-sm text-gray-400">&copy; 2025 - PAWZ</p>
+
+    <!-- Payment Methods -->
+   
+  </div>
+</footer>
+
+</section>
+
+    <script src="main.js"></script>
+</body>
+</html>

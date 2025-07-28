@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comtact page</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Navbar -->
+    
+    <nav class="w-full border-b border-gray-200 bg-white px-6 py-3 flex justify-between items-center sticky top-0 z-50"> 
+  <!-- Left: Logo -->
+  <div class="flex items-center gap-2">
+    <img src="image/pawz.svg" alt="PAWZ Logo">
+   
+  </div>
+ <!-- Desktop Menu -->
+<ul class="hidden md:flex gap-8 text-sm font-semibold tracking-widest text-gray-800">
+  <li class="hover:underline cursor-pointer"><a href="index.html">BEST SELLERS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">NEW ARRIVALS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">DOGS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">CATS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">DROPS</a></li>
+  <li class="hover:underline cursor-pointer"><a href="#">APPAREL</a></li>
+</ul>
+<div class="flex gap-3 items-center ">
+    <!-- Search Icon -->
+<i id="search-icon" class="fa-solid fa-magnifying-glass text-xl cursor-pointer"></i>
+
+    <!-- Search Input (Hidden initially) -->
+<input 
+  id="search-input" 
+  type="text" 
+  placeholder="Search products..." 
+  class="hidden border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none ">
+
+
+    <!-- Cart Icon -->
+    <i class="fa-solid fa-cart-shopping text-xl cursor-pointer"></i>
+
+    <!-- Mobile Menu Icon -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <i class="fa-solid fa-bars text-2xl"></i>
+    </button>
+  </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (Hidden by Default) -->
+<div id="mobile-menu" class="absolute hidden bg-white w-full border-gray-200 z-10 ">
+  <ul class="flex flex-col gap-4 p-4  text-gray-800 font-semibold tracking-widest">
+    <li class="hover:underline cursor-pointer">BEST SELLERS</li>
+    <li class="hover:underline cursor-pointer">NEW ARRIVALS</li>
+    <li class="hover:underline cursor-pointer">DOGS</li>
+    <li class="hover:underline cursor-pointer">CATS</li>
+    <li class="hover:underline cursor-pointer">DROPS</li>
+    <li class="hover:underline cursor-pointer">APPAREL</li>
+  </ul>
+</div>
+     <div class="relative w-full p-2">
+        <img src="image\contact.webp" class="w-full h-[60vh] md:h-[80vh] object-cover" alt="Cover Image" />
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+            <p class="text-2xl font-bold mb-1 tracking-widest">Contact Us</p>
+            <h1 class="text-sm  px-6 mb-4">
+                Feel free to reach out here, we'd love to hear from you to help out with any questions and feedback you have! You can expect to hear back from us within 48 hours
+            </h1>
+            <button class="bg-white text-black px-8 py-3 rounded font-bold mt-2 hover:bg-transparent hover:text-white hover:border hover:border-white transition duration-300">
+                Shop Now
+            </button>
+        </div>
+    </div>
+    <!--form-->
+      <div class="bg-white">
+      <header class=" flex bg-black text-white text-center items-center justify-center pb-12">
+        <h1 class="text-4xl font-bold mt-16">Contact Us</h1>
+      </header>
+      <section class="text-center py-12 px-4">
+        <h2 class="text-2xl font-bold">Get In Touch</h2>
+        <p class="mt-4 text-gray-700 max-w-2xl mx-auto">We are here to help you. Reach out to us via any of the following methods.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 ">
+          <div class="p-4 shadow-lg rounded-lg bg-black text-white">
+            <h3 class="text-xl font-bold">Call Us</h3>
+            <p class="text-gray-500 mt-2">+1 123 456 7890</p>
+          </div>
+          <div class="p-4 shadow-lg rounded-lg bg-black text-white ">
+            <h3 class="text-xl font-bold">Email Us</h3>
+            <p class="text-gray-500 mt-2">@ pawz.com</p>
+          </div>
+          <div class="p-4 shadow-lg rounded-lg bg-black text-white ">
+            <h3 class="text-xl font-bold">Visit Us</h3>
+            <p class="text-gray-500 mt-2">12zzx PAWZ store</p>
+          </div>
+        </div>
+      </section>
+      <section class="bg-gray-100 py-12 px-4">
+        <h2 class="text-2xl font-bold text-center">Send Us A Message</h2>
+        <form class="max-w-2xl mx-auto mt-8 space-y-8">
+          <div>
+            <label htmlFor="name" class="block text-gray-700 font-bold">Name</label>
+            <input type="text" id="name" class="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black transition" />
+          </div>
+          <div>
+            <label htmlFor="email" class="block text-gray-700 font-bold">Email</label>
+            <input type="email" id="email" class="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black transition" />
+          </div>
+          <div>
+            <label htmlFor="message" class="block text-gray-700 font-bold">Message</label>
+            <textarea id="message" rows="5" class="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black transition"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-black text-white py-3 rounded-lg shadow-lg ">Send Message</button>
+        </form>
+      </section>
+</body>
+</html>
